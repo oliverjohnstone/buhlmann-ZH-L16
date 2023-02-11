@@ -1,4 +1,4 @@
-import { type CCGas, type OCGas, type Profile } from './types'
+import { type CCGas, type OCGas, type Profile, isClosedCircuitGas, isOpenCircuitGas } from './types'
 import { NitrogenTables, type TableEntry, TableHelium } from './tables'
 
 export class TissueLoading {
@@ -39,7 +39,10 @@ export class TissueLoading {
   }
 
   calculateProfile (gas: OCGas | CCGas, depthMSW: number, bottomTimeMinutes: number, decentMetersPerMin: number, ascentMetersPerMin: number): Profile {
-
+    const gasType: 'CC' | 'OC' | null = isOpenCircuitGas(gas) ? 'OC' : isOpenCircuitGas(gas) ? 'CC' : null
+    if (gasType === null) {
+      throw new Error('Unexpected gas. Ensure it has all required properties of OC gas or CC gas')
+    }
   }
 
   addSurfaceInterval (minutes: number): void {

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test",
     "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },
   "files": [
