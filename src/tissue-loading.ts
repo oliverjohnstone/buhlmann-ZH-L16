@@ -8,6 +8,7 @@ export class TissueLoading {
   private readonly gradientFactorHigh: number
   private readonly gradientFactorLow: number
   private readonly resolutionSeconds: number
+
   constructor (startingAtmosphericMillibars: number, table: 'A' | 'B' | 'C', gradientFactorHigh: number, gradientFactorLow: number, resolutionSeconds = 60) {
     if (['A', 'B', 'C'].includes(table)) {
       throw new Error(`Expected table to be one of A, B or C but received: ${table}`)
