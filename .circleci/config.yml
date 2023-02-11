@@ -6,8 +6,6 @@ jobs:
       - image: cimg/node:19.6.0
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
       - run:
           command: npm ci
           name: Install
@@ -23,8 +21,6 @@ jobs:
       - image: cimg/node:19.6.0
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
       - run:
           command: npm run build
           name: Build
@@ -34,8 +30,6 @@ jobs:
       - image: cimg/node:19.6.0
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
       - run:
           name: Publish to NPM
           command: |
