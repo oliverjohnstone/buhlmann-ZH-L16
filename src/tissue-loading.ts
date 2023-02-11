@@ -26,6 +26,10 @@ export class TissueLoading {
       throw new Error(`Expected high gradient factor to be between 0 and 100, but received: ${gradientFactorHigh}`)
     }
 
+    if (resolutionSeconds < 1 || resolutionSeconds > 60) {
+      throw new Error(`Expected resolution to be between 1 second and 60 seconds but received: ${resolutionSeconds}`)
+    }
+
     this.gradientFactorHigh = gradientFactorHigh
     this.gradientFactorLow = gradientFactorLow
     this.resolutionSeconds = resolutionSeconds
