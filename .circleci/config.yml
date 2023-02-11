@@ -11,14 +11,14 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-        command: npm ci
-        name: Install
+          command: npm ci
+          name: Install
       - run:
-        command: npm run lint
-        name: Lint
+          command: npm run lint
+          name: Lint
       - run:
-        command: npm t
-        name: Test
+          command: npm t
+          name: Test
 
   build:
     executor: node/default
@@ -27,8 +27,8 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-        command: npm run build
-        name: Build
+          command: npm run build
+          name: Build
 
   publish:
     steps:
