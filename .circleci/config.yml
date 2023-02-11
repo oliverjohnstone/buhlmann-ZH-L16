@@ -22,6 +22,9 @@ jobs:
     steps:
       - checkout
       - run:
+          command: npm install
+          name: Install
+      - run:
           command: npm run build
           name: Build
 
@@ -31,7 +34,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Publish to NPM
+          name: publish
           command: |
             npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
             npm publish
