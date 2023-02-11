@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src",
+    "lint": "eslint src test",
     "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },
   "files": [
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/oliverjohnstone/buhlmann-ZH-L16#readme",
   "devDependencies": {
+    "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "eslint": "^8.34.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
