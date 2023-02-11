@@ -1,6 +1,6 @@
 {
   "name": "buhlmann-zh-l16",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A decompression algorithm based on Buhlmann's ZH-L16",
   "main": "dist/index.js",
   "scripts": {
