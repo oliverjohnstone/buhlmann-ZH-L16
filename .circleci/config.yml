@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: npm ci
+          command: npm install
           name: Install
       - run:
           command: npm run lint
