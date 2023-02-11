@@ -38,14 +38,20 @@ export class TissueLoading {
     this.tissueLoading = Array.from(new Array(17), () => 0) // TODO - Use pressure at surface
   }
 
-  calculateProfile (gas: OCGas | CCGas, depthMSW: number, bottomTimeMinutes: number, decentMetersPerMin: number, ascentMetersPerMin: number): Profile {
+  calculateProfile (gas: OCGas | CCGas, depthMSW: number, bottomTimeMinutes: number, decentMetersPerMin = 20, ascentMetersPerMin = 10): Profile {
     const gasType: 'CC' | 'OC' | null = isOpenCircuitGas(gas) ? 'OC' : isOpenCircuitGas(gas) ? 'CC' : null
     if (gasType === null) {
       throw new Error('Unexpected gas. Ensure it has all required properties of OC gas or CC gas')
     }
+
+    // TODO - On gas tissues and return profile
   }
 
   addSurfaceInterval (minutes: number): void {
+    if (minutes < 0 || minutes > 48 * 60) {
+      throw new Error(`Expected surface interval to be between 0 and ${48 * 60} minutes but received ${minutes}`);
+    }
 
+    // TODO - Off gas tissues at startingAtmosphericMillibars for n minutes
   }
 }
