@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint .",
-    "build": "tsc --project tsconfig.build.json"
+    "lint": "eslint src",
+    "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },
   "files": [
     "dist",
