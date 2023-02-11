@@ -38,8 +38,8 @@ export class TissueLoading {
     this.tissueLoading = Array.from(new Array(17), () => 0) // TODO - Use pressure at surface
   }
 
-  calculateProfile (gas: OCGas | CCGas, depthMSW: number, bottomTimeMinutes: number, decentMetersPerMin = 20, ascentMetersPerMin = 10): Profile {
-    const gasType: 'CC' | 'OC' | null = isOpenCircuitGas(gas) ? 'OC' : isOpenCircuitGas(gas) ? 'CC' : null
+  calculateProfile (gas: OCGas | CCGas, depthMSW: number, bottomTimeMin: number, decentMetersPerMin = 20, ascentMetersPerMin = 10): Profile {
+    const gasType: 'CC' | 'OC' | null = isOpenCircuitGas(gas) ? 'OC' : isClosedCircuitGas(gas) ? 'CC' : null
     if (gasType === null) {
       throw new Error('Unexpected gas. Ensure it has all required properties of OC gas or CC gas')
     }
